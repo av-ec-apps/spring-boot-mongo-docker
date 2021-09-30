@@ -26,11 +26,11 @@ public class UserController {
     @PostMapping(value = "/save")
     public String save(@RequestParam("firstName") String firstName,
                        @RequestParam("lastName") String lastName,
+                        @RequestParam("gender") String gender,
                        @RequestParam("email") String email) {
 
     	logger.info("Creating user name: "+firstName);
-        User user = new User(firstName, lastName, email);
-        @RequestParam("gender") String gender,
+        User user = new User(firstName, lastName, gender, email);
         userRepository.save(user);
 
         return "redirect:/";
