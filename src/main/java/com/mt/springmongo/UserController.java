@@ -30,6 +30,7 @@ public class UserController {
 
     	logger.info("Creating user name: "+firstName);
         User user = new User(firstName, lastName, email);
+        @RequestParam("gender") String gender,
         userRepository.save(user);
 
         return "redirect:/";
